@@ -1,0 +1,76 @@
+@use "./breakpoints";
+@use "./colours";
+@use "./typography";
+
+$height: 135.008px; // Manually measured after layout.
+$height-large: 85.016px; // Manually measured after layout.
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background-color: colours.$navy;
+
+  a {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 0.5em;
+      padding-bottom: 0.22em;
+      max-height: 30px;
+      &:hover,
+      &:focus,
+      &:active {
+        padding-bottom: 0.07em;
+        border-bottom: 0.15em solid colours.$accent-a;
+      }
+    }
+  }
+
+  > ul {
+    margin: 1em;
+    padding: 0;
+    list-style: none;
+
+    @include breakpoints.on-large-screens {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;  
+    }
+
+    > li {
+      margin-bottom: 0;
+
+      &:first-child {
+        margin-right: auto;
+      }
+      &:nth-child(2) {
+        margin-right: auto;
+        h1 {
+          color: #e1e1e1;
+          line-height: 0.5em;
+        }
+      }
+    }
+  }
+
+  &__search {
+    margin-top: 1em;
+
+    @include breakpoints.on-large-screens {
+      margin-top: 0;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  scroll-margin-top: 0.5em;
+}
