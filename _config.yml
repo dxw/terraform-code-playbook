@@ -1,0 +1,72 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+# https://developer.hashicorp.com/terraform/language/syntax/style
+# https://cloud.google.com/docs/terraform/best-practices-for-terraform
+# https://developer.hashicorp.com/terraform/language/modules/develop
+
+title: dxw Terraform Code Playbook
+email: hello@dxw.com
+description: >- # this means to ignore newlines until "baseurl:"
+  This Terrafform Code Playbook is our reference for creating maintainable and readable Terrform code and modules. Something canonical that tells us what the current “right way” to do things is.
+
+  We use a few tools to standardise our coding style, such as `terraform fmt`, terraform-docs, Tflint and tfsec. However these tools can still allow for difficult to read/maintain or overcomplicated code.
+
+  Terraform is continually developing, and as such our standards may change to follow the latest way of doing things. We should ensure that the code we write is maintainable and accessible for developers of any skillset.
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://terraform-code-playbook.dxw.com"
+twitter_username: dxw
+github_username:  dxw
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: default
+      related_order: 9999
+
+# Build settings
+source: src
+sass:
+  load_paths:
+    - ../node_modules/*
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

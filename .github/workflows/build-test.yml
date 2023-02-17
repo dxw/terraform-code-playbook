@@ -1,0 +1,48 @@
+name: Testing the Jekyll build
+
+on:
+  push:
+    branches: main
+  pull_request:
+
+jobs:
+  jekyll-build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    - name: Setup cache
+      uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        cache: 'npm'
+
+    - name: Install dependancies
+      run: npm ci
+
+    # Bug fix for the GitHub action not respeceting the `source` parameter in _config.yml
+    # https://github.com/helaili/jekyll-action/issues/140
+    - name: Copy _config.json to the src dir
+      run: cp _config.yml src/_config.yml
+
+    # Standard usage
+    - name: Build Jekyll site
+      uses: helaili/jekyll-action@master
+      with:
+        build_only: true
+        build_dir: ./_site
+        jekyll_src: ./src
+
+    - name: HTMLProofer
+      uses: chabad360/htmlproofer@master
+      with:
+        directory: "./_site"
