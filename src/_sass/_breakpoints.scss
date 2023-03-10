@@ -1,7 +1,14 @@
+$vlarge: 950px;
 $large: 800px;
 
 @mixin on-large-screens {
   @media screen and (min-width: $large) {
+    @content;
+  }
+}
+
+@mixin on-vlarge-screens {
+  @media screen and (min-width: $vlarge) {
     @content;
   }
 }

@@ -22,7 +22,7 @@
 # https://cloud.google.com/docs/terraform/best-practices-for-terraform
 # https://developer.hashicorp.com/terraform/language/modules/develop
 
-title: dxw Terraform Code Playbook
+title: Terraform Code Playbook
 email: hello@dxw.com
 description: >- # this means to ignore newlines until "baseurl:"
   This Terrafform Code Playbook is our reference for creating maintainable and readable Terrform code and modules. Something canonical that tells us what the current “right way” to do things is.
