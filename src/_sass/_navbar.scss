@@ -51,7 +51,10 @@ $height-large: 85.016px; // Manually measured after layout.
         margin-right: auto;
         h1 {
           color: #e1e1e1;
-          line-height: 0.5em;
+          line-height: 1.5ex;
+          @include breakpoints.on-vlarge-screens {
+            line-height: 0.2em;
+          }
         }
       }
     }
