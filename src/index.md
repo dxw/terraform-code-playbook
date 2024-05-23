@@ -23,4 +23,4 @@ don't forget that changes here get published to the world.
 
 To update the Terraform Code Playbook, follow the
 [guide to Contributing to the Playbook](/contributing/) and use
-<a href="https://playbook.dxw.com/work-we-do/tone-of-voice/" target="_blank">dxw Tone of voice</a>
+<a href="https://playbook.dxw.com/staff-handbook/talking-about-what-we-do/tone-of-voice/" target="_blank">dxw Tone of voice</a>
