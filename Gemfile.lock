@@ -32,7 +32,7 @@ GEM
     google-protobuf (3.25.5-arm64-darwin)
     google-protobuf (3.25.5-x86_64-linux)
     hashery (2.1.2)
-    html-proofer (5.0.9)
+    html-proofer (5.0.10)
       addressable (~> 2.3)
       async (~> 2.1)
       nokogiri (~> 1.13)
